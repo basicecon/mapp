@@ -1,30 +1,30 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 
 const propTypes = {
   onSearch: PropTypes.func,
 };
 
-class Search extends Component {
+export default class Search extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 
     this.state = {
       value: '',
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
     this.setState({value: event.target.value});
-  };
+  }
 
   handleSubmit(event){
     event.preventDefault();
     this.props.onSearch(this.state.value);
     this.getDOMNode().querySelector('input').blur();
-  };
+  }
 
   render() {
     return (
@@ -46,4 +46,3 @@ class Search extends Component {
 }
 
 Search.propTypes = propTypes;
-export default Search;
