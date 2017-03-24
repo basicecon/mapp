@@ -1,4 +1,5 @@
 var React = require('react');
+var GMaps = require('gmaps');
 
 var Map = React.createClass({
 

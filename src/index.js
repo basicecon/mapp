@@ -1,10 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Search from './Search';
-import Map from './Map';
+var React = require('react');
+var ReactDOM = require('react-dom');
+var App = require('./App');
+var Search = require('./Search');
+var Map = require('./Map')
 
 ReactDOM.render(
-  <Search />,
-  <Map />,
+  <App />,
   document.getElementById('root')
 );
+
