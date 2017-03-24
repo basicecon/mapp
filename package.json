@@ -1,20 +1,19 @@
 {
-  "name": "mapp",
-  "version": "0.1.0",
+  "name": "first-webapp-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
   "private": true,
-  "dependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "moment": "^2.10.2"
-  },
-  "devDependencies": {
-    "react-scripts": "0.9.5"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "watchify -v -d -t [ reactify --es6 ] main.js -o compiled.js",
+    "build": "NODE_ENV=production browserify -t [ reactify --es6 ] main.js | uglifyjs > compiled.js"
+  },
+  "author": "Tutorialzine",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.10.2",
+    "react": "^0.13.2"
   },
   "devDependencies": {
     "browserify": "^9.0.8",
